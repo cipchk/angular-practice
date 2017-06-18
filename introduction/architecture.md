@@ -56,10 +56,15 @@ export class UserModule { }
 
 ```typescript
 @Component({
-    template: '<p>当前用户：{{ name }}</p><button (click)="login()">登录</button>'
+    template: `
+    <p>当前用户：{{ user.name }}</p>
+    <button (click)="login()">登录</button>
+    `
 })
 export class UserLoginComponent {
-    name: string = 'cipchk';
+    user: any = {
+        name: 'cipchk'
+    };
 
     login() {
         // 登录动作

@@ -27,14 +27,14 @@ export class UserLoginComponent {
 
 这张图包含下列概念：
 
-* Moduel
-* Component
-* Template
-* Data binding
-* Metadata
-* Directive
-* Service
-* Dependency Injection
+1. Moduel
+1. Component
+1. Template
+1. Data binding
+1. Metadata
+1. Directive
+1. Service
+1. Dependency Injection
 
 
 

@@ -67,36 +67,4 @@ export class AppComponent {
 }
 ```
 
-模板里用一对 {{}} 双大括号包裹着组件类 `hi` 属性，你可以随时改变 `hi` 属性的值（这里设置了一个定时器3秒后改变值），Angular会实时同步更新模板的渲染。
-
-> `constructor` 组件类构造函数，且由DI来完成实例。
-
-组件与组件类的交互是通过模板相应的DOM事件来完成的，增加一组按钮，来告诉组件类到底约不约。
-
-```typescript
-@Component({
-  selector: 'app-root',
-  template: `
-  <p>{{hi}}</p>
-  <button (click)="telAs(true)">约</button>
-  <button (click)="telAs(false)">不约</button>
-  `
-})
-export class AppComponent {
-    hi: string = `Hi,cipchk，约吗？`;
-    
-    telAs(result: boolean) {
-      this.hi = result ? '你家、我家，还是如家？' : '88';
-    }
-}
-```
-
-模板使用 `(click)="telAs(true)"` 来访问组件类的方法，左边为DOM标准事件名 `click`，右边对应的是组件类 `telAs` 方法名及所须参数。
-
-## 小结
-
-除了ts 语法外，你是否发现上面的代码中并没有出现任何陌生的名词，模板中 `(click)` 点击事件名再熟悉不过了，而组件类也只是一个再简单不过的 ts 类而已。
-
-这就是新的Angular模板引擎带来的变化，尽可能的依赖标准、减少学习成本。
-
-如果你很细心不知是否发现，模板中会用 {{}}、() 来表示一些特定的行为能力，这其实是Angular的一种数据流向的约定，这一点在[模板语法](template.md)会详细介绍。
+模板里用一对 `{{}}` 双大括号包裹着组件类 `hi` 属性，你可以随时改变 `hi` 属性的值（这里设置了一个定时器3秒后改变值），Angular会实时同步更新模板的渲染。

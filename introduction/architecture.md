@@ -56,6 +56,7 @@ export class UserModule { }
 
 ```typescript
 @Component({
+    template:'hello {{ $ctrl.greeting }}',
     template: `
     <p>当前用户：{{ user.name }}</p>
     <button (click)="login()">登录</button>

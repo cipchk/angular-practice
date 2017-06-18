@@ -56,11 +56,11 @@ users2: Array<string> = [ { name: 'asdf' }, { name: 'cipchk' } ];
 ```html
 user1:
 <ul>
-    <li *ngFor="let name of users1">{{name}}</li>
+    <li *ngFor="let name of users1">{{ name }}</li>
 </ul>
 user2:
 <ul>
-    <li *ngFor="let item of users2">{{item.name}}</li>
+    <li *ngFor="let item of users2">{{ item.name }}</li>
 </ul>
 ```
 

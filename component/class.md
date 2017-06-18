@@ -74,21 +74,6 @@ export class AppComponent {
 组件与组件类的交互是通过模板相应的DOM事件来完成的，增加一组按钮，来告诉组件类到底约不约。
 
 ```typescript
-@Component({
-  selector: 'app-root',
-  template: `
-  <p>{{hi}}</p>
-  <button (click)="telAs(true)">约</button>
-  <button (click)="telAs(false)">不约</button>
-  `
-})
-export class AppComponent {
-    hi: string = `Hi,cipchk，约吗？`;
-    
-    telAs(result: boolean) {
-      this.hi = result ? '你家、我家，还是如家？' : '88';
-    }
-}
 ```
 
 模板使用 `(click)="telAs(true)"` 来访问组件类的方法，左边为DOM标准事件名 `click`，右边对应的是组件类 `telAs` 方法名及所须参数。

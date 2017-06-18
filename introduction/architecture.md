@@ -1,3 +1,24 @@
+# Templating
+
+GitBook uses the [Nunjucks templating language](https://mozilla.github.io/nunjucks/) to process pages and theme's templates.
+
+The Nunjucks syntax is very similar to **Jinja2** or **Liquid**. Its syntax uses surrounding braces `{ }` to mark content that needs to be processed.
+
+### Variables
+
+A variable looks up a value from the template context. If you wanted to simply display a variable, you would use the `{{ variable }}` syntax. For example :
+
+```twig
+My name is {{ name }}, nice to meet you
+```
+
+This looks up username from the context and displays it. Variable names can have dots in them which lookup properties, just like JavaScript. You can also use the square bracket syntax.
+
+```twig
+{{ foo.bar }}
+{{ foo["bar"] }}
+```
+
 # 架构概况
 
 Angular是一个框架！它包含很多东西，诸如：数据绑定、路由、动画、表单等，所有这些东西很多不是必选的，你可以**按需索取**。
@@ -54,7 +75,7 @@ export class UserModule { }
 
 组件，我觉得应该叫**视图组件**更合理一点，因为一个组件必须对应一个模板，使用 `@Component` 装饰器。
 
-```
+```typescript
 @Component({
     template: `
     <p>当前用户：{{ name }}</p>

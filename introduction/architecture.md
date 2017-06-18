@@ -1,9 +1,3 @@
-
-```twig
-{{ foo.bar }}
-{{ foo["bar"] }}
-```
-
 # 架构概况
 
 Angular是一个框架！它包含很多东西，诸如：数据绑定、路由、动画、表单等，所有这些东西很多不是必选的，你可以**按需索取**。
@@ -15,58 +9,57 @@ Angular是一个框架！它包含很多东西，诸如：数据绑定、路由�
 ![overview](../_images/overview.png)
 
 
-```twig
-{{ foo.bar }}
-{{ foo["bar"] }}
+```typescript
+@Component({
+    template: `
+    <p>当前用户：{{ name }}</p>
+    <button (click)="login()">登录</button>
+    `
+})
+export class UserLoginComponent {
+    name: string = 'cipchk';
+
+    login() {
+        // 登录动作
+    }
+}
 ```
 
 这张图包含下列概念：
 
-
-```twig
-{{ foo.bar }}
-{{ foo["bar"] }}
-```
-
-* Moduel
-* Component
-* Template
-* Data binding
-* Metadata
-* Directive
-* Service
-* Dependency injection
++ Moduel
++ Component
++ Template
++ Data binding
++ Metadata
++ Directive
++ Service
++ Dependency injection
 
 
-```twig
-{{ foo.bar }}
-{{ foo["bar"] }}
+```typescript
+@Component({
+    template: `
+    <p>当前用户：{{ name }}</p>
+    <button (click)="login()">登录</button>
+    `
+})
+export class UserLoginComponent {
+    name: string = 'cipchk';
+
+    login() {
+        // 登录动作
+    }
+}
 ```
 
 以下会对每一个概念进行简单的介绍。
-
-```twig
-{{ foo.bar }}
-{{ foo["bar"] }}
-```
 
 ## Module
 
 一个应用会有成百上千组件，这么多组件，不可能是一下子全部用得到的呀，那要怎么维护呢。
 
-
-```twig
-{{ foo.bar }}
-{{ foo["bar"] }}
-```
-
 比如一个登录功能，可能只需要登录组件、注册组件、忘记密码组件、登录API接口服务、登录状态存储而已呀，我们把这些组件汇聚在一起，然后叫它为模块（Module）。
-
-
-```twig
-{{ foo.bar }}
-{{ foo["bar"] }}
-```
 
 Angular框架使用 `NgModule` 来表述，大概长这样：
 
@@ -82,12 +75,6 @@ import { BrowserModule } from '@angular/platform-browser';
 export class UserModule { }
 ```
 
-
-```twig
-{{ foo.bar }}
-{{ foo["bar"] }}
-```
-
 这里有几个属性：
 
 + `imports` 导入别人的组件，比如可能需要一个发送短信获取验证码的功能。
@@ -101,16 +88,7 @@ export class UserModule { }
 
 组件，我觉得应该叫**视图组件**更合理一点，因为一个组件必须对应一个模板，使用 `@Component` 装饰器。
 
-```twig
-{{ foo.bar }}
-{{ foo["bar"] }}
-```
-
 ```typescript
-
-{{ foo.bar }}
-{{ foo["bar"] }}
-
 @Component({
     template: `
     <p>当前用户：{{ name }}</p>

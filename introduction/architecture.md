@@ -14,6 +14,12 @@ Angular是一个框架！它包含很多东西，诸如：数据绑定、路由�
 
 ![overview](../_images/overview.png)
 
+
+```twig
+{{ foo.bar }}
+{{ foo["bar"] }}
+```
+
 这张图包含下列概念：
 
 + Moduel
@@ -33,6 +39,12 @@ Angular是一个框架！它包含很多东西，诸如：数据绑定、路由�
 
 比如一个登录功能，可能只需要登录组件、注册组件、忘记密码组件、登录API接口服务、登录状态存储而已呀，我们把这些组件汇聚在一起，然后叫它为模块（Module）。
 
+
+```twig
+{{ foo.bar }}
+{{ foo["bar"] }}
+```
+
 Angular框架使用 `NgModule` 来表述，大概长这样：
 
 ```typescript
@@ -45,6 +57,12 @@ import { BrowserModule } from '@angular/platform-browser';
   exports:      [ UserService ]
 })
 export class UserModule { }
+```
+
+
+```twig
+{{ foo.bar }}
+{{ foo["bar"] }}
 ```
 
 这里有几个属性：

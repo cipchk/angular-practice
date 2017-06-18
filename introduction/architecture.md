@@ -8,52 +8,16 @@ Angular是一个框架！它包含很多东西，诸如：数据绑定、路由�
 
 ![overview](../_images/overview.png)
 
-
-```typescript
-@Component({
-    template: `
-    <p>当前用户：{{ name }}</p>
-    <button (click)="login()">登录</button>
-    `
-})
-export class UserLoginComponent {
-    name: string = 'cipchk';
-
-    login() {
-        // 登录动作
-    }
-}
-```
-
 这张图包含下列概念：
 
-1. Moduel
-1. Component
-1. Template
-1. Data binding
-1. Metadata
-1. Directive
-1. Service
-1. Dependency Injection
-
-
-
-
-```typescript
-@Component({
-    template: `
-    <p>当前用户：{{ name }}</p>
-    <button (click)="login()">登录</button>
-    `
-})
-export class UserLoginComponent {
-    name: string = 'cipchk';
-
-    login() {
-        // 登录动作
-    }
-}
-```
+Moduel
+Component
+Template
+Data binding
+Metadata
+Directive
+Service
+Dependency injection
 
 以下会对每一个概念进行简单的介绍。
 

@@ -42,9 +42,11 @@ _以上几乎解决我遇到的网络环境的所有问题，如有其他种情�
 
 ## 开发环境
 
-运行 `ng serve`，打开浏览器访问：**http://localhost:4200**，看到“Welcome to app!!”字样，恭喜你，欢迎来到Angular世界！
+运行 `ng serve`，打开浏览器访问：`http://localhost:4200`，看到“Welcome to app!!”字样，恭喜你，欢迎来到Angular世界！
 
-当你修改 `src/app/app.component.html` 内容保存后，会自动刷新浏览器。Happy Coding!!!
+当你修改 `src/app/app.component.html` 内容保存后，会自动刷新浏览器。
+
+Happy Coding!!!
 
 ### 跨域
 
@@ -61,7 +63,7 @@ _以上几乎解决我遇到的网络环境的所有问题，如有其他种情�
 ```json
 const PROXY_CONFIG = [
     {
-        context: [
+        "context": [
             "/my",
             "/many",
             "/endpoints",
@@ -70,8 +72,8 @@ const PROXY_CONFIG = [
             "/to",
             "/proxy"
         ],
-        target: "http://localhost:3000",
-        secure: false
+        "target": "http://localhost:3000",
+        "secure": false
     }
 ]
 

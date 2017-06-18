@@ -48,7 +48,7 @@ Chrome Dev Tools 绝对是目前最爽的 JavaScript 调试工具之一，一方
 
 在项目根目录下创建 `.vscode/launch.json`，内容如下：
 
-```json
+```javascript
 {
     // Use IntelliSense to learn about possible Node.js debug attributes.
     // Hover to view descriptions of existing attributes.

@@ -28,14 +28,14 @@ Angular是一个框架！它包含很多东西，诸如：数据绑定、路由�
 {{ foo["bar"] }}
 ```
 
-+ Moduel
-+ Component
-+ Template
-+ Data binding
-+ Metadata
-+ Directive
-+ Service
-+ Dependency injection
+* Moduel
+* Component
+* Template
+* Data binding
+* Metadata
+* Directive
+* Service
+* Dependency injection
 
 
 ```twig

@@ -22,6 +22,12 @@ Angular是一个框架！它包含很多东西，诸如：数据绑定、路由�
 
 这张图包含下列概念：
 
+
+```twig
+{{ foo.bar }}
+{{ foo["bar"] }}
+```
+
 + Moduel
 + Component
 + Template
@@ -31,11 +37,28 @@ Angular是一个框架！它包含很多东西，诸如：数据绑定、路由�
 + Service
 + Dependency injection
 
+
+```twig
+{{ foo.bar }}
+{{ foo["bar"] }}
+```
+
 以下会对每一个概念进行简单的介绍。
+
+```twig
+{{ foo.bar }}
+{{ foo["bar"] }}
+```
 
 ## Module
 
 一个应用会有成百上千组件，这么多组件，不可能是一下子全部用得到的呀，那要怎么维护呢。
+
+
+```twig
+{{ foo.bar }}
+{{ foo["bar"] }}
+```
 
 比如一个登录功能，可能只需要登录组件、注册组件、忘记密码组件、登录API接口服务、登录状态存储而已呀，我们把这些组件汇聚在一起，然后叫它为模块（Module）。
 

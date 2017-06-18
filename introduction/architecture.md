@@ -55,13 +55,6 @@ export class UserModule { }
 组件，我觉得应该叫**视图组件**更合理一点，因为一个组件必须对应一个模板，使用 `@Component` 装饰器。
 
 ```twig
-
-{{ foo.bar }}
-{{ foo["bar"] }}
-```
-
-```typescript
-
 {{ foo.bar }}
 {{ foo["bar"] }}
 ```

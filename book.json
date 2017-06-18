@@ -11,7 +11,7 @@
             "attributes": {
                 "width": "600"
             },
-            "caption": "图 _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_"
+            "caption": "_PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_"
         },
         "github-buttons": {
             "repo": "cipchk/angular-practice",

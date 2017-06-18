@@ -57,7 +57,7 @@ export class UserModule { }
 ```typescript
 @Component({
     template: `
-    <p>当前用户：{{name}}</p>
+    <p>当前用户：{{ name }}</p>
     <button (click)="login()">登录</button>
     `
 })
@@ -82,7 +82,7 @@ export class UserLoginComponent {
 
 ## Data binding
 
-数据绑定，Angular提供了非常丰富的模板语法，诸如：`*ngFor`、`{{name}}`、`(click)`、`[(ngModel)]` 等。
+数据绑定，Angular提供了非常丰富的模板语法，诸如：`*ngFor`、`{{ name }}`、`(click)`、`[(ngModel)]` 等。
 
 ## Metadata
 

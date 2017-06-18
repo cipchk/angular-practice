@@ -54,127 +54,15 @@ export class UserModule { }
 
 组件，我觉得应该叫**视图组件**更合理一点，因为一个组件必须对应一个模板，使用 `@Component` 装饰器。
 
-```typescript
-// my-component.ts
-import { Component, Host } from 'ng-metadata/core';
-import { NgModel } from 'ng-metadata/common';
-
-@Component({ 
-  selector:'my-component',
-  template:'hello {{ $ctrl.greeting }}'
-})
-class MyComponent{
-  
-  greeting: string;
-  
-  constructor(@Host() private ngModel: NgModel){}
-  
-  ngAfterViewInit(){
-    this.ngModel.$render = () => {
-      this.greeting = angular.copy(this.ngModel.$viewValue);
-    }
-  }
-}
-
-// my-component.spec.ts
-import * as angular from 'angular';
-import { expect } from 'chai';
-import { MyComponent } from './my-component';
-import { renderFactory, IRender } from 'ng-metadata/testing';
-import { bundle, getInjectableName, NgModule } from 'ng-metadata/core';
-
-describe(`MyComponent`, () => {
-  
-  @Component( {
-    selector: 'test-component',
-    template: `<my-component ng-model="$ctrl.data"></my-component>`
-  } )
-  class TestComponent {
-    data = { name: 'Martin' }
-  }
-
-  @NgModule({
-    declarations: [ TestComponent, MyComponent ]
-  })
-  class TestNgModule {}
-  
-  const TestModule: string = bundle(TestNgModule).name;
-  
-  let $compile: ng.ICompileService;
-  let $rootScope: ng.IRootScopeService;
-  let $scope: ng.IScope;
-  let render: IRender<TestComponent>;
-  
-  beforeEach(() => {
-    // load our created Angular Module
-    angular.mock.module(TestModule);
-  });
-  
-  beforeEach(angular.mock.inject(($injector: ng.auto.IInjectorService) => {
-
-    $compile = $injector.get<ng.ICompileService>('$compile');
-    $rootScope = $injector.get<ng.IRootScopeService>('$rootScope');
-    $scope = $rootScope.$new();
-
-    render = renderFactory( $compile, $scope );
-
-  }));
-  
-  it(`should create the DOM and compile`, () => {   
-    
-    // here we go!
-    // it returns instance and compiled DOM of testComponent
-    const {compiledElement} = render(TestComponent);
-    
-    // now we need to get our tested component
-    const {debugElement,componentInstance} = queryByDirective(compiledElement,MyComponent);
-    
-    expect(componentInstance instanceof MyComponent).to.equal(true);
-    expect(debugElement[0]).to.equal('<my-component ng-model="$ctrl.data">hello Martin!</my-component>');
-  });
-  
-  it(`should reflect parent model changes`,() => {
-  
-      const {compiledElement, ctrl} = render(TestComponent);
-          
-      // now we need to get our tested component
-      const {debugElement,componentInstance} = queryByDirective(compiledElement,MyComponent);
-      
-      // now change ngModel reference
-      ctrl.name = 'Igor';
-      
-      $rootScope.$digest();
-      
-      expect(componentInstance.greeting).to.equal('Igor');
-      expect(debugElement.text()).to.equal('hello Igor!');
-          
-  });
-  
-});
-
-// helper - this will be implemented to ng-metadata in next release
-function queryByDirective<T extends Type>( host: ng.IAugmentedJQuery, Type: T ) {
-  const ctrlName = getInjectableName( Type );
-  const selector = lodash.kebabCase( ctrlName );
-  const debugElement = host.find( selector );
-  const componentInstance = debugElement.controller( ctrlName ) as T;
-
-  return { debugElement, componentInstance };
-}
 ```
-
-```typescript
 @Component({
-    template:'hello {{ $ctrl.greeting }}',
     template: `
-    <p>当前用户：{{ user.name }}</p>
+    <p>当前用户：{{ name }}</p>
     <button (click)="login()">登录</button>
     `
 })
 export class UserLoginComponent {
-    user: any = {
-        name: 'cipchk'
-    };
+    name: string = 'cipchk';
 
     login() {
         // 登录动作

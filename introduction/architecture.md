@@ -10,8 +10,20 @@ Angular是一个框架！它包含很多东西，诸如：数据绑定、路由�
 
 这张图包含下列概念：
 
-```html
-<p>当前用户：{{ name }}</p>
+```typescript
+@Component({
+    template: `
+    <p>当前用户：{{ name }}</p>
+    <button (click)="login()">登录</button>
+    `
+})
+export class UserLoginComponent {
+    name: string = 'cipchk';
+
+    login() {
+        // 登录动作
+    }
+}
 ```
 
 + Moduel
@@ -23,8 +35,20 @@ Angular是一个框架！它包含很多东西，诸如：数据绑定、路由�
 + Service
 + Dependency injection
 
-```html
-<p>当前用户：{{ name }}</p>
+```typescript
+@Component({
+    template: `
+    <p>当前用户：{{ name }}</p>
+    <button (click)="login()">登录</button>
+    `
+})
+export class UserLoginComponent {
+    name: string = 'cipchk';
+
+    login() {
+        // 登录动作
+    }
+}
 ```
 
 以下会对每一个概念进行简单的介绍。

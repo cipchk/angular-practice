@@ -10,14 +10,22 @@ Angular是一个框架！它包含很多东西，诸如：数据绑定、路由�
 
 这张图包含下列概念：
 
-Moduel
-Component
-Template
-Data binding
-Metadata
-Directive
-Service
-Dependency injection
+```html
+<p>当前用户：{{ name }}</p>
+```
+
++ Moduel
++ Component
++ Template
++ Data binding
++ Metadata
++ Directive
++ Service
++ Dependency injection
+
+```html
+<p>当前用户：{{ name }}</p>
+```
 
 以下会对每一个概念进行简单的介绍。
 

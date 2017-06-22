@@ -1,6 +1,6 @@
 # `{{}}` 插值表达式
 
-插值表达式指是利用 `{{ }}` 包裹着组件类属性名，且支持JavaScript运算。
+插值表达式指是利用 `{{}}` 包裹着组件类属性名，且支持JavaScript运算。
 
 哎，其实压根就不应该有种这概念，因为你想呀，把组件类的属性放在模板的某个位置，总归需要一定的语法表述，这是理所当然的事情。
 
@@ -68,11 +68,11 @@ Angular模板引擎的特点，可能被C#6.0荼毒了；但很爽……
 <div [innerHTML]="love ? '<strong>^_^</strong>' : '~_~'"></div>
 ```
 
-> 此时，这里少了 `{{ }}` 这是[模板语法](template.md)的事情，现在你暂时先不管这个问题。
+> 此时，这里少了 `{{}}` 这是[模板语法](template.md)的事情，现在你暂时先不管这个问题。
 
-## 输出{{}}
+## 输出 `{{}}`
 
-既然 `{{}}` 是插值表达式语法一部分，那有时就是需要输出 {{}} 文本怎么办？因为这一点在显示富文本的内容时经常遇到。
+既然 `{{}}` 是插值表达式语法一部分，那有时就是需要输出 `{{}}` 文本怎么办？因为这一点在显示富文本的内容时经常遇到。
 
 **方法一：使用Unicode编码**
 
@@ -92,7 +92,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class AppComponent {
   html: SafeHtml;
   constructor(sanitized: DomSanitizer) { 
-    this.html = sanitized.bypassSecurityTrustHtml(`{{ hi }}`);
+    this.html = sanitized.bypassSecurityTrustHtml('{{ hi }}');
   }
 }
 ```

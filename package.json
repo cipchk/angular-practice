@@ -1,0 +1,32 @@
+{
+  "name": "angular-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "gitbook.build": "run-s build gitbook.deploy",
+    "gitbook.deploy": "gh-pages -d _dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cipchk/angular-practice.git"
+  },
+  "keywords": [
+    "angular",
+    "angular2"
+  ],
+  "author": "cipchk",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/cipchk/angular-practice/issues"
+  },
+  "homepage": "https://github.com/cipchk/angular-practice#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-sequence": "^0.4.6",
+    "npm-run-all": "^4.0.2",
+    "through2": "^2.0.3"
+  }
+}

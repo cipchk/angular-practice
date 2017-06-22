@@ -62,7 +62,7 @@ let list: Promise<string[]>;
 
 **Observable**
 
-Angular引入的一个非常重要非常重要非常重要的类库 **RxJs**，当在Angular中发起[Http](../../http/README.md)请求的时，返回的就是一个 Observable 类型对象，有关更多细节会在[Observable](../../http/observable.md)章节深入介绍。
+Angular引入的一个非常重要非常重要非常重要的类库 **RxJs**，当在Angular中发起[Http](../../http/README.md)请求的时，返回的就是一个 Observable 类型对象，有关更多细节会在[RxJs](../../rxjs/README.md)章节深入介绍。
 
 ```typescript
 let list: Observable<string[]>;

@@ -18,4 +18,4 @@
 
 欢迎鼓励一杯咖啡（因为我此时正在星巴克 ^_^ ）
 
-![coffee](./_images/donate.png)
+![coffee](_images/donate.png)

@@ -22,7 +22,7 @@
             "size": "small"
         },
         "page-treeview": {
-            "copyright": "Copyright &#169; cipchk",
+            "copyright": "",
             "minHeaderCount": "2",
             "minHeaderDeep": "2"
         }

@@ -18,7 +18,7 @@ ts 与 es 最大的区别在我看来应该是前者编译型、后者是解释�
 
 ![Coding](../_images/coding.gif)
 
-### .editorconfig
+**.editorconfig文件**
 
 EditorConfig 是一套用于统一代码工具的解决方案，所以默认会帮我们生成该文件，你可以在 `./.editorconfig` 改变成你希望的代码风格。
 

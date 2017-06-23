@@ -76,6 +76,50 @@ export class UserListComponent {
 delete.emit({ id: 1, name: 'cipchk' });
 ```
 
-**$event**
+### 如何处理dom事件
 
-`$event`
+有时候当我们需要点击事件后并阻止默认行为时（即调用 `event.preventDefault()`），就需要在模板中设置 `$event` 参数。
+
+```html
+<user-detail userId="1" (delete)="onDelete($event)">
+```
+
+实际上 `$event` 就是指DOM Event 对象。因此，可以组件类这么处理：
+
+```typescript
+onDelete(event: Event) {
+  event.preventDefault();
+}
+```
+
+### 处理Event对象与参数并存
+
+前面我说过 `EventEmitter<T>` 只接收一个参数，这意味者，没有必须接收两个参数，即 Event 对象和业务参数，那怎么办呢？
+
+其实我们可以换个角度来想，对于 `user-detail` 组件的 `delete` 自定义事件而言，其触发在其组件内，而非调用方（即：`UserListComponent`）。所以类似这种情况，应该在其组件内进行处理。
+
+{% raw %}
+ ```typescript
+@Component({
+  selector: 'user-detail',
+  template: `
+  user id: {{userId}}
+  <button (click)="onDelete($event)">delete</button>`
+})
+export class UserDetailComponent {
+  @Input() userId: number;
+  @Output() delete = new EventEmitter<number>();
+
+  onDelete(event: Event) {
+    event.preventDefault();
+    this.delete.emit(this.user.id);
+  }
+}
+``` 
+{% endraw %}
+
+### 不要在Service中使用 `EventEmitter<T>`
+
+前面我说过【触发**组件或指令**中的自定义事件】，虽然其本质是继承RxJs的 `Subject`，但Angular会对其更进一步抽象。
+
+如果你需要在Service中那么请用RxJs相关方法，例如：`Subject`。

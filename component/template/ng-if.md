@@ -46,4 +46,14 @@ Error: (SystemJS) Error: Template parse errors:
 
 ## 解析语法糖
 
-既然是语法糖，其本质其实就是一个叫 `[ngIf]` 指令，请参考 [ng-template](ng-template.md) 章节的探讨。
+```html
+<strong *ngIf="item.id === 1">管理员</strong>
+```
+
+将它拆开来，就是这样子：
+
+```html
+<ng-template [ngIf]="item.id === 1">
+  <strong>管理员</strong>
+</ng-template>
+```

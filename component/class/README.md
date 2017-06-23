@@ -45,7 +45,7 @@ template: `<h1></h1>`
 
 这里的URL接收不光可以是一个 `css` 文件，她允许接收时下所有浏览CSS预处理（例：scss、less等），当然这并不是Angular的功能，而是Webpack的特性。
 
-更多细节见[样式](styles.md)章节。
+更多细节见[样式](../styles.md)章节。
 
 ## 二、类
 

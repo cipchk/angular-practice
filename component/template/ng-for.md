@@ -173,4 +173,18 @@ export class App {
 
 ## 解析语法糖
 
-既然是语法糖，其本质其实就是一个叫 `[ngFor]` 指令，请参考 [ng-template](ng-template.md) 章节的探讨。
+```html
+<ul>
+    <li *ngFor="let name of users | async">{{name}}</li>
+</ul>
+```
+
+将它拆开来，就是这样子：
+
+```html
+<ul>
+    <ng-template ngFor let-name [ngForOf]="users | async">
+        <li>{{name}}</li>
+    </ng-template>
+</ul>
+```

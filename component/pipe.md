@@ -69,11 +69,11 @@ Angular提供了几个常用的Pipe：
 
 **DatePipe**
 
-日期格式化提供了非常丰富的[格式化符号](https://angular.io/api/common/DatePipe)，`{{ now | date: 'yyyy-MM-dd' }}` => `2017-06-24`。
+日期格式化提供了非常丰富的[格式化符号](https://angular.io/api/common/DatePipe)，{% raw %}`{{ now | date: 'yyyy-MM-dd' }}`{% endraw %} => `2017-06-24`。
 
 **CurrencyPipe**
 
-货币格式化，`{{ 100 | currency:'CNY' }}` => `CNY100.00`。
+货币格式化，{% raw %}`{{ 100 | currency:'CNY' }}`{% endraw %} => `CNY100.00`。
 
 它货币代码遵循的是[ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)标准。然而，其实我只想要一个保留2位小数+千位符而已啦，然后这个货币内置很难满足我的要求：
 
@@ -87,22 +87,22 @@ Result: CN¥1,000.56
 
 **DecimalPipe**
 
-数字格式化，`{{ 10000.566 | number: '3.2-2' }}` => `10,000.57`。
+数字格式化，{% raw %}`{{ 10000.566 | number: '3.2-2' }}`{% endraw %} => `10,000.57`。
 
 其实用它来表示货币，感觉更符合本土化，而对于货币也短了一点点。
 
 **slice**
 
-从数组中返回选定的项，比如获取下标1至5的数据 `{{ users | slice:1:5 }}`。
+从数组中返回选定的项，比如获取下标1至5的数据 {% raw %}`{{ users | slice:1:5 }}`{% endraw %}。
 
 **json**
 
-JSON字符串化，调试的时候好方便。`{{ user | json }}`。
+JSON字符串化，调试的时候好方便。{% raw %}`{{ user | json }}`{% endraw %}。
 
 **UpperCasePipe**
 
-大写字母化，`{{ 'asdf' | uppercase }}` => `ASDF`。
+大写字母化，{% raw %}`{{ 'asdf' | uppercase }}`{% endraw %} => `ASDF`。
 
 **LowerCasePipe**
 
-大写字母化，`{{ 'Asdf' | lowercase }}` => `asdf`。
+大写字母化，{% raw %}`{{ 'Asdf' | lowercase }}`{% endraw %} => `asdf`。

@@ -31,7 +31,7 @@ function convertString(input) {
         return _tmp;
     });
     // code
-    return input.replace(/`[ {}\w\d]+`/gm, (match) => {
+    return input.replace(/`[ '|\.\-:{}\w\d]+`/gm, (match) => {
         let _tmp = ~match.indexOf('{{') ? `{% raw %}${match}{% endraw %}` : match;
         return _tmp;
     });

@@ -3,7 +3,8 @@
     "author": "cipchk",
     "plugins": [
         "image-captions",
-        "github-buttons"
+        "github-buttons",
+        "github-issue-feedback"
     ],
     "pluginsConfig": {
         "image-captions": {
@@ -19,6 +20,9 @@
                 "watch"
             ],
             "size": "small"
+        },
+        "github-issue-feedback": {
+            "repo": "cipchk/angular-practice"
         }
     }
 }

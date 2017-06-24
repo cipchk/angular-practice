@@ -67,9 +67,7 @@ export class Log {
 同样的 `log` 指令改写成：
 
 ```typescript
-@Directive({
-    selector: '[log]'
-})
+@Directive({ selector: '[log]' })
 export class Log {
 
     @HostBinding('class')
@@ -85,3 +83,20 @@ export class Log {
 爽了！
 
 这里还有一个知识点，是关于样式里也支持 host 概念，而这一点，我统一在[样式](../styles.md)中描述。
+
+## 访问宿主DOM元素
+
+Angular提供一个 `ElementRef` 允许我们直接对原生DOM进行操作，虽然这样子做不科学，但有时候不得不的情况下，还是蛮方便的。
+
+```typescript
+@Directive({ selector: '[log]' })
+export class Log {
+    constructor(el: ElementRef) {
+        console.log(el.nativeElement);
+    }
+}
+```
+
+它只有一个 `nativeElement` 属性，正如其名一样。
+
+**注：Web Worker 环境无法操作DOM。**

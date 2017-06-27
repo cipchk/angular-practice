@@ -2,7 +2,7 @@
 
 组件样式提供 `styles` 或 `styleUrls` 两种样式写法。而 `styleUrls` 这里的URL接收不光可以是一个 `css` 文件，还允许接收时下所有浏览CSS预处理（例：scss、less等）的文件格式，当然这并不是Angular的功能，而是Webpack的特性。
 
-## 一个简单示例
+## 一、一个简单示例
 
 ```typescript
 @Component({
@@ -24,7 +24,7 @@ p[_ngcontent-c0] {
 
 为什么会_ngcontent-c0，下面我以 Web Components 标准的角度看待 Angular 在样式上面是如何兼容这种标准，这能理解为什么会这样、为什么需要这样。
 
-## Web Components
+## 二、Web Components
 
 我前面几章节一直提到 Web Components 标准，同时Angular组件也兼容这种标准。Web Components 的每一个组件都是由组件自己来组织JS、CSS、DOM的。
 
@@ -66,7 +66,7 @@ Web Components 有一个非常重要的概念叫：Shadow DOM。它能在DOM树�
 
 这一些已经不是Angular的范围，有关更多细节，可以自行百度：Shadow DOM。
 
-## `encapsulation`
+## 三、`encapsulation`
 
 上面我们说到 `encapsulation`，它是指组件的样式、模板是采用哪种封装策略。
 
@@ -83,3 +83,45 @@ Shadow DOM 模式，即组件模板与样式不会向上影响。但对于样式
 **None**
 
 对于样式而言，是全局性质的。
+
+## 四、导入外部样式
+
+项目依赖 **bootstrap4** UI框架是很普通的，以下有几种办法可以集成这类UI框架，道理都是相通的。
+
+### 1、CDN
+
+最简单的办法就是直接在 `index.html` 加上CDN引用。
+
+```html
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+```
+
+### 2、导入项目
+
+首先：先安装依赖包：
+
+```bash
+npm install bootstrap@4.0.0-alpha.6 --save
+```
+
+其次：导入至项目中，有两个办法：
+
+A：打开 `.angular-cli.json` 设置 `styles` 节点路径。
+
+```json
+"styles": [
+    "../node_modules/bootstrap/dist/css/bootstrap.css",
+    "styles.scss"
+]
+```
+
+B：打开 `src/styles.scss` 置入。
+
+```scss
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+```
+
+**关于路径**
+
+这里为什么需要 `../` 为前缀的原因是，`.angular-cli.json` 里面我们明确配置了根目录是 `"root": "src"`，因此，如果想要使用 `node_modules` 依赖包目录下的内容，需要先返回一级（即：`../`）。
